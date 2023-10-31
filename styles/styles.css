@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* PADRE PRICIPAL de "me" y "enlaces" */
+.contenedor {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.85fr 2fr;
+    grid-template-areas: 
+    "me contenedor__redes";
+}
+
+/* ------------------------------ ME - Columna 1 --------------------------------- */
+
+.me {
+    background-color: #efefef;
+    min-height: 100vh;
+
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    grid-area: me;
+}
+
+.me__img {
+    height: 210px;
+    width: 210px;
+    margin-top: 15px;
+}
+
+.me__h1 {
+    padding-top: 15px;
+    padding-inline: 20px;
+    font-size: 41px;
+}
+
+.me__h3 {
+    padding-inline: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #5d5d5d;
+}
+
+.me__button {
+    margin-top: 100px;
+}
+
+.bn5 {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+  }
+  
+  .bn5:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowingbn5 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  @keyframes glowingbn5 {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .bn5:active {
+    color: #ffffff;
+    font-size: 13px;
+  }
+  
+  .bn5:active:after {
+    background: rgb(37, 37, 37);
+  }
+  
+  .bn5:hover:before {
+    opacity: 1;
+  }
+  
+  .bn5:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #191919;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+/* ------------------------ Links - Columna 2 ---------------------------- */
+
+/* Padre */
+.contenedor__redes {
+    grid-area: contenedor__redes;
+    overflow: auto;          /* Para el Scroll */
+
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Barra de navegacipn personalizada */
+.contenedor__redes::-webkit-scrollbar {
+  width: 7px;
+} 
+.contenedor__redes::-webkit-scrollbar-thumb {
+  background-color: #5d5d5d;
+  border-radius: 2px;
+}
+
+.h2__redesSociales {
+  width: 100%;
+  padding: 100px 20px 30px 20px;
+  background-color: #efefef;
+
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* hijo contenedor */
+.redes__sociales {
+  width: 100%;
+  min-height: 415px;  
+  background-color: #efefef;
+
+}
+
+/* CARDS */
+.card__instagram {
+  background-color: #7a00ff;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  "card__instagram-col-1 card__instagram-col-2";
+}
+.card__instagram-col-1 {
+  grid-area: card__instagram-col-1;
+}
+.card__instagram-col-2 {
+  grid-area: card__instagram-col-2;
+
+  background-color: #57d11e;
+  width: 100%;
+  height: 100%;
+}
+
+.card__github {
+  background-color: #48ff00;
+}
+
+.card__twitter {
+  background-color: #ffee04;
+}
+
+.card__linkedin {
+  background-color: #cc0c82;
+}
+
+.card__youtube {
+  background-color: #78db80;
+}
+
+.card__portfolio {
+  background-color: #ffae00;
+}
+
+/* icon - personalizado */
+.card__icon-portfolio {
+  width: 41px;
+  min-height: 41px;
+}
+
+/* -------------- Atributos y Propiedades Compartidas -----------------*/
+
+/* CARDS */
+.card__linkedin, .card__portfolio, 
+.card__twitter, .card__github {
+  width: 178px;
+  min-height: 178px;
+}
+
+.card__instagram, .card__youtube {
+  width: 380px;
+  min-height: 178px;
+}
+
+.card {
+  border-radius: 25px;
+  padding: 1.5rem;
+}
+
+.card__icon {
+  width: 40px;
+  min-height: 40px;
+  border-radius: 11px;
+}
+
+.card__h4-titulo {
+  font-size: 14px;
+  font-weight: 400;
+  color: #111;
+  margin-top: 4px;
+}
+
+.card__p {
+  font-size: 12px;
+  font-weight: 400;
+  color: #424242;
+
+  margin-top: 1px;
+}
+
+/* ---------- BOTONES ---------- */
+
+/* button - Instagram */
+.button__instagram {
+  background-color: #35adf8;
+  padding: 4px 14px 4px 14px;
+  border: none;
+  border-radius: 7px;
+
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+
+  margin-top: 30px;
+
+  cursor: pointer;
+}
+
+.button__instagram > span {
+  color: #e7e7e7;
+  font-weight: 400;
+  padding-left: 6px;
+}
+
+.button__instagram:hover {
+  background-color: #0275c7;
+}
+
+/* button - github */
+.button__github {
+  border: 1px solid #c9c9c9;
+  padding: 4px 20px 4px 20px;
+  border-radius: 5px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  margin-top: 30px;
+
+  cursor: pointer;
+}
+
+.button__github:hover {
+  background-color: #dfdfdf;
+}
+
